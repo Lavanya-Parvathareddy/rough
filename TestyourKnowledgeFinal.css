@@ -1,0 +1,313 @@
+:root {
+    --dark-bg-color: #15202b;
+    --light-bg-color: #38444d;
+    --text-color: white;
+    --button-bg-color: #04aa6d;
+    --hover-bg-color: #ffc0c7;
+    --hover-text-color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: var(--light-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.test-your-knowledge-final-page {
+    background-color: var(--dark-bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.knowledge-box-final-page {
+    width: 100%;
+}
+
+.exercise-box-final-page {
+    margin-top: 2rem;
+}
+
+.heading-area-final-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.three-lines-final {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.5rem;
+    width: 2rem;
+}
+
+.three-lines-final .line {
+    background-color: var(--text-color);
+    height: 0.2rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.three-lines-final.active .line:nth-child(1) {
+    transform: translateY(0.65rem) rotate(45deg);
+}
+
+.three-lines-final.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.three-lines-final.active .line:nth-child(3) {
+    transform: translateY(-0.65rem) rotate(-45deg);
+}
+
+.three-lines-final-navigation {
+    background-color: var(--dark-bg-color);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    transition: left 0.3s ease;
+    padding: 2rem;
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--button-bg-color) var(--dark-bg-color);
+}
+
+.three-lines-final-navigation::-webkit-scrollbar {
+    width: 8px;
+}
+
+.three-lines-final-navigation::-webkit-scrollbar-track {
+    background: var(--dark-bg-color);
+    border-radius: 4px;
+}
+
+.three-lines-final-navigation::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--button-bg-color), var(--hover-bg-color));
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.three-lines-final-navigation::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--hover-bg-color), var(--button-bg-color));
+}
+
+@keyframes scroll-glow {
+    0% { box-shadow: 0 0 5px var(--button-bg-color); }
+    50% { box-shadow: 0 0 15px var(--button-bg-color); }
+    100% { box-shadow: 0 0 5px var(--button-bg-color); }
+}
+
+.three-lines-final-navigation::-webkit-scrollbar-thumb:active {
+    animation: scroll-glow 1s infinite;
+}
+
+.three-lines-final-navigation.active {
+    left: 0;
+}
+
+.three-lines-final-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.three-lines-final-navigation li {
+    margin-bottom: 1rem;
+}
+
+.three-lines-final-navigation a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.three-lines-final-navigation a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+
+.three-lines-final-navigation a.active {
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+}
+
+.knowledge-explanation-area-final-page,
+.actual-content-area-final-page {
+    background-color: var(--light-bg-color);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* .last{
+    display:flex;
+    flex-direction:row;
+} */
+
+.submit-button-final-page {
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.submit-button-final-page:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+.start-exercise-link-final-page {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.start-exercise-link-final-page {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+}
+
+.start-exercise-link-final-page:hover {
+    background-color: var(--text-color);
+    color: var(--dark-bg-color);
+}
+
+@keyframes success-animation {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes failure-animation {
+    0% { transform: scale(0) rotate(0deg); }
+    25% { transform: scale(1.2) rotate(-20deg); }
+    50% { transform: scale(1) rotate(20deg); }
+    75% { transform: scale(1.2) rotate(-20deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.success-animation {
+    animation: success-animation 0.5s ease-out;
+}
+
+.failure-animation {
+    animation: failure-animation 0.5s ease-out;
+}
+
+/* Laptops and Desktops */
+@media (min-width: 769px) {
+    .test-your-knowledge-final-page {
+        width: 80%;
+        padding: 2rem;
+    }
+
+    .three-lines-final-navigation {
+        width: 50%;
+    }
+
+    .heading-area-final-page {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .three-lines-final {
+        width: 2rem;
+        height: 1.5rem;
+    }
+
+    .three-lines-final .line {
+        height: 0.2rem;
+    }
+
+    .knowledge-explanation-area-final-page,
+    .actual-content-area-final-page {
+        padding: 2rem;
+    }
+
+    .submit-button-final-page {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .start-exercise-link-final-page {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+.test-your-knowledge-final-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knowledge-box-final-page {
+    width: 90%;
+    max-width: 60rem;
+    padding: 2rem;
+}
+
+.exercise-box-final-page {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.heading-area-final-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 20rem;
+}
+
+.knowledge-explanation-area-final-page,
+.actual-content-area-final-page {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.submit-button-final-page,
+.start-exercise-link-final-page {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+}
+
+/* Add more styles as needed */

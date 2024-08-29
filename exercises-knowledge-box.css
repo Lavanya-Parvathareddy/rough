@@ -1,0 +1,134 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.exercises {
+  background-color: #38444d;
+  color: white;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exercises-knowledge-box {
+  background-color: #15202b;
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exercises-knowledge-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.real-time-exercise-box {
+  margin-top: 1rem;
+}
+
+.heading-area-1 h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.knowledge-explanation-area-1 {
+  margin-bottom: 1rem;
+}
+
+.actual-content-area-1 {
+  background-color: #38444d;
+  color: white;
+  height: 50vh;
+  margin-bottom: 1rem;
+}
+
+.button-area {
+  margin-bottom: 1rem;
+}
+
+#runButton, #submitButton {
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.output-console {
+  background-color: #38444d;
+  color: white;
+  padding: 1rem;
+  height: 50vh;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* Custom scrollbar styles */
+.monaco-editor .monaco-scrollable-element > .scrollbar,
+.output-console::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider,
+.output-console::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #04aa6d, #038052);
+  border-radius: 0.4rem;
+}
+
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider:hover,
+.output-console::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #05c07d, #049c63);
+}
+
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider:active,
+.output-console::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #06d68b, #05b272);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.monaco-editor .monaco-scrollable-element > .scrollbar > .slider,
+.output-console::-webkit-scrollbar-thumb {
+  animation: pulse 2s infinite;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.submit--button {
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.start-exercise--link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  margin-top: 1rem;
+} 
+
+.start-exercise--link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,144 @@
+.education-animation-area {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+.education-animation-area {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #f0f0f0; 
+  position: relative; 
+}
+.custom-shape-divider-bottom-1722681483 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  position: relative;
+  display: block;
+  width: calc(128% + 1.3px);
+  height: 40rem;
+}
+.custom-shape-divider-bottom-1722681483 .shape-fill {
+  fill: #38444d;
+}
+.inspirational-animations, .conclusion-animation {
+  position: relative;
+  z-index: 2; 
+}
+.inspirational-animations {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+}
+.animation-container {
+  position: absolute;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.animation-container.left, .animation-container.right {
+  left: 0;
+}
+.animation-container:nth-child(1) { top: 0; }
+.animation-container:nth-child(2) { top: 22%; }
+.animation-container:nth-child(3) { top: 46%; }
+.animation-container:nth-child(4) { top: 66%; }
+#animation1, #animation2, #animation3, #animation4 {
+  width: 50%;
+  height: 10rem;
+}
+
+.animation-text {
+  font-size: 1.2rem;
+  width: 50%;
+  padding: 0 5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.conclusion-animation {
+  width: 60%;
+  margin: -6rem auto 0;
+  text-align: center;
+}
+#conclusion-animation {
+  width: 100%;
+  height: 20rem;
+}
+.conclusion-animation .animation-text {
+  width: 100%;
+  margin-top: -5rem;
+  padding: 0;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .inspirational-animations {
+    height: auto;
+  }
+  
+  .animation-container {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .animation-container:nth-child(1),
+  .animation-container:nth-child(2),
+  .animation-container:nth-child(3),
+  .animation-container:nth-child(4) {
+    top: auto;
+  }
+  
+  #animation1, #animation2, #animation3, #animation4 {
+    width: 100%;
+    height: 8rem;
+  }
+  
+  .animation-text {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .conclusion-animation {
+    width: 90%;
+    margin-top: 2rem;
+  }
+  
+  #conclusion-animation {
+    height: 15rem;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .custom-shape-divider-bottom-1722681483 svg {
+    height: 20rem;
+  }
+  
+  .animation-text {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+  
+  #animation1, #animation2, #animation3, #animation4 {
+    height: 6rem;
+  }
+  
+  #conclusion-animation {
+    height: 12rem;
+  }
+  
+  .conclusion-animation .animation-text {
+    margin-top: -3rem;
+  }
+}

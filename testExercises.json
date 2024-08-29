@@ -1,0 +1,10 @@
+{
+    "html1": {
+        "name": "HTML1 Test",
+        "expectedCode": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>HTML1 Test</title>\n</head>\n<body>\n    <h1>Welcome to HTML1 Test</h1>\n    <p>This is a basic HTML structure.</p>\n</body>\n</html>"
+    },
+    "html2": {
+        "name": "HTML2 Test",
+        "expectedCode": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>HTML2 Test</title>\n</head>\n<body>\n    <h1>HTML2 Test</h1>\n    <ul>\n        <li>Item 1</li>\n        <li>Item 2</li>\n        <li>Item 3</li>\n    </ul>\n</body>\n</html>"
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naga Sowndarya Nadella</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/editor/editor.main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <nav class="nav-bar-1">
+        <div class="logo-icon">
+          <img src="LOGO4.svg" alt="Logo">
+        </div>
+        <!-- <div class="about-icon">
+          <img src="chat-round-like-svgrepo-com (1).svg" alt="About">
+        </div> -->
+        <div class="quote-area">
+          <!-- Quotes will be dynamically inserted here -->
+        </div>
+    </nav>
+    <nav class="nav-bar-2">
+        <div class="nav-bar-2-top">
+            <div class="three-lines-icon">
+                <div class="hamburger-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+            </div>
+            <div class="courses-area">
+                <div class="names-area">
+                    <ul class="course-list">
+                        <li>HTML1</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>PHP</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <!-- Add more course names as needed -->
+                    </ul>
+                </div>
+                <div class="main-quotation">
+                    Learn to Code
+                </div>
+            </div>
+        </div>
+        <div class="three-lines-menu" style="display: none;">
+            <div class="course-title-area">How to Build Self Confidence</div>
+            <div class="tutorial-display-area"></div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="navigation-buttons">
+            <button id="prevButton" class="nav-button">Previous</button>
+            <button id="nextButton" class="nav-button">Next</button>
+        </div>
+
+        <div class="course-explanation-area">
+
+        </div>
+        <div class="exercises-knowledge-box">
+            <h2>Test Yourself With Exercises</h2>
+            <div class="real-time-exercise-box">
+              <div class="heading-area-1">
+                <h3>Real-Time Exercise</h3>
+              </div>
+              <div class="knowledge-explanation-area-1">
+                <p>Here's where you can explain the exercise...</p>
+              </div>
+              <div class="actual-content-area-1" id="monaco-editor-container">
+                <!-- Monaco editor will be initialized here -->
+              </div>
+              <div class="button-area">
+                <button id="runButton">Run</button>
+                <a href="#" id="startExerciseLink" class="start-exercise--link">Start Exercise</a>
+              </div>
+              <div class="output-console" id="output-console"></div>
+            </div>
+          </div>
+   
+          <!-- Loading Animation Container -->
+          <div id="loading-animation-container-1" style="display: none;">
+            <div id="loading-animation-1"></div>
+          </div>
+
+
+        
+        <div id="loading-animation-container-2" style="display: none;">
+            <div id="loading-animation-2"></div>
+        </div>
+
+
+
+        <div class="knowledge-box">
+            <h2>Test Yourself With Exercises</h2>
+            <div class="exercise-box">
+                <div class="heading-area-2">
+                    <h3>Exercise 1</h3>
+                </div>
+                <div class="knowledge-explanation-area-2">
+                    <p>Complete the HTML code to create a paragraph.</p>
+                </div>
+                <div class="actual-content-area-2">
+                    <p>&lt;<input type="text" class="user-input"> This is a paragraph &lt;/p&gt;</p>
+                </div>
+                <div class="button-container">
+                    <button class="submit-button">Submit Answer</button>
+                    <a href="#" class="start-exercise-link">Start Exercise</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="education-animation-area">
+            <div class="inspirational-animations">
+                <div class="animation-container left">
+                    <div id="animation1"></div>
+                    <p class="animation-text">Stay Focused and Avoid Distractions</p>
+                </div>
+                <div class="animation-container right">
+                    <div id="animation2"></div>
+                    <p class="animation-text">Active Learning</p>
+                </div>
+                <div class="animation-container left">
+                    <div id="animation3"></div>
+                    <p class="animation-text">Time Management</p>
+                </div>
+                <div class="animation-container right">
+                    <div id="animation4"></div>
+                    <p class="animation-text">Maintain a Positive Mindset</p>
+                </div>
+            </div>
+
+            <div class="conclusion-animation">
+                <div id="conclusion-animation"></div>
+                <p class="animation-text">Happy Study</p>
+            </div>
+
+            <div class="custom-shape-divider-bottom-1722681483">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+    <audio id="clickSound" src="ClickSound.mp3"></audio>
+    <script src="script1.js"></script>
+
+   
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' } });
+        require(['vs/editor/editor.main'], function() {
+            // Monaco Editor is now loaded and ready to use
+            // Your initialization code will go here
+        });
+      });
+    </script>
+    
+    <script src="HTML\HTML for Smarter Students.js"></script>
+    <script src="EducationalAnimation.js"></script>
+
+
+</body>
+</html>

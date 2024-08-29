@@ -1,0 +1,1616 @@
+/* Nav1 */
+
+
+
+:root {
+  --nav1-bg-color: #1d2a35;
+  --text-color: white;
+  --logo-hover-color: #04b388;
+  --dialog-bg-color: #1d2a35;
+  --text-area-bg-color: #8a2be2;
+
+  --nav2-bg-color: #282a35;
+  --icon-bg-color: black;
+  --hover-bg-color: #15202b;
+  --select-bg-color: #04aa6d;
+
+  --menu-bg-color: #15202b;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #1d2a35;
+  height: 100vh; /* Full viewport height */
+  /* color: white; */
+}
+
+.nav-bar-1 {
+  display: flex;
+  background-color: var(--nav1-bg-color);
+  width: 100%;
+  min-height: 5rem;
+  align-items: center;
+}
+.logo-container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.logo-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.3s ease;
+}
+.logo-icon:hover {
+  border-radius: 50%;
+  /* outline: 0.625rem solid var(--logo-hover-color); */
+}
+
+.logo-icon img {
+  max-width: 70%;
+  max-height: 70%;
+  transition: opacity 0.3s ease;
+}
+
+.logo-icon::after {
+  content: 'Click me';
+  position: absolute;
+  top: 3.7rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  color: var(--text-color);
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 
+    0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.8),
+    -0.1rem -0.1rem 0.2rem rgba(255, 255, 255, 0.4),
+    0 0 0.5rem var(--logo-hover-color);
+}
+
+.logo-icon:hover img {
+  opacity: 1;
+}
+
+.logo-icon:hover::after {
+  opacity: 1;
+}
+.quote-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.quote-area {
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+.custom-dialog button {
+  margin-top: 0.625rem;
+}
+.custom-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--dialog-bg-color);
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.2);
+  z-index: 1001;
+  pointer-events: auto;
+  width: 80%;
+  height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.custom-dialog button {
+  margin-top: 0.625rem;
+}
+
+.text-area {
+  position: relative;
+  background-color: var(--text-area-bg-color);
+  color: var(--text-color);
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.text-area-1 {
+  padding-top: 3rem;
+}
+
+.text-area-2 {
+  padding-bottom: 3rem;
+}
+
+.ok-button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 0.625rem 6rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.75rem 3rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+ 
+}
+
+.ok-button:hover {
+  background-color: #038f5d;
+}
+
+.ok-button:active {
+  background-color: #027a4f;
+  transform: translateY(0.0625rem);
+}
+
+.ok-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1875rem rgba(4, 170, 109, 0.5);
+}
+
+
+.custom-shape-divider-top,
+.custom-shape-divider-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top {
+  top: 0;
+}
+
+.custom-shape-divider-bottom {
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top svg,
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 3rem;
+}
+
+.custom-shape-divider-top .shape-fill,
+.custom-shape-divider-bottom .shape-fill {
+  fill: var(--dialog-bg-color);
+}
+
+/* Styled scrollbar */
+.custom-dialog::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.custom-dialog::-webkit-scrollbar-track {
+  background: var(--dialog-bg-color);
+}
+
+.custom-dialog::-webkit-scrollbar-thumb {
+  background-color: var(--text-area-bg-color);
+  border-radius: 0.25rem;
+}
+
+.custom-dialog::-webkit-scrollbar-thumb:hover {
+  background-color: #9932cc;
+}
+
+
+/* Nav2 */
+
+
+
+.nav-bar-2 {
+  background-color: var(--nav2-bg-color);
+  width: 100%;
+  position: sticky;
+  top: -0.01rem;
+  z-index: 1000;
+}
+
+.nav-bar-2-top {
+  display: flex;
+  align-items: stretch;
+}
+
+.three-lines-icon {
+  background-color: var(--icon-bg-color);
+  padding: 0.625rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.courses-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 40px);
+  overflow: hidden;
+}
+
+
+.names-area {
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.names-area::-webkit-scrollbar {
+  display: none;
+}
+
+.names-area:active {
+  cursor: grabbing;
+}
+
+.course-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  user-select: none;
+}
+
+.course-list li {
+  color: var(--text-color);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.course-list li:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.course-list li.selected {
+  background-color: var(--select-bg-color);
+}
+
+.hamburger-icon {
+  width: 3rem; /* 30px / 16 = 1.875rem */
+  height: 2rem; /* 20px / 16 = 1.25rem */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger-icon div {
+  width: 100%;
+  height: 0.40rem; /* 4px / 16 = 0.25rem */
+  background-color: var(--text-color);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-icon.active div:nth-child(1) {
+  transform: translateY(0.8rem) rotate(45deg); /* 8px / 16 = 0.5rem */
+}
+
+.hamburger-icon.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.active div:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg); /* 8px / 16 = 0.5rem */
+}
+.main-quotation {
+  background-color: var(--select-bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0.625rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+:root {
+  --nav1-bg-color: #1d2a35;
+  --text-color: white;
+  --logo-hover-color: #04b388;
+  --dialog-bg-color: #1d2a35;
+  --text-area-bg-color: #8a2be2;
+
+  --nav2-bg-color: #282a35;
+  --icon-bg-color: black;
+  --hover-bg-color: #15202b;
+  --select-bg-color: #04aa6d;
+
+  --menu-bg-color: #15202b;
+}
+
+.three-lines-menu {
+  position: absolute;
+  top: 100%;
+  background-color: var(--menu-bg-color);
+  color: var(--text-color);
+  padding: 1.25rem;
+  box-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  left: 0;
+  width: 60%;
+  /* height: calc(100vh - 1px); */
+  height:100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+}
+
+/* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.9rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.375rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  background-color: #04aa6d;
+  border-radius: 0.375rem;
+  border: 0.125rem solid var(--menu-bg-color);
+  box-shadow: 
+    inset 0 0 0.125rem ,#04aa6d
+    0 0 0.125rem white;
+  border: solid 0.5px white;
+  height:1rem;
+}
+
+.course-title-area {
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+.tutorial-display-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.tutorial-item {
+  padding: 1% 1%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+:root {
+  --nav1-bg-color: #1d2a35;
+  --text-color: white;
+  --logo-hover-color: #04b388;
+  --dialog-bg-color: #1d2a35;
+  --text-area-bg-color: #8a2be2;
+
+  --nav2-bg-color: #282a35;
+  --icon-bg-color: black;
+  --hover-bg-color: #15202b;
+  --select-bg-color: #04aa6d;
+
+  --menu-bg-color: #15202b;
+}
+
+ .tutorial-display-area{
+  background-color: transparent;
+}
+.tutorial-display-area  h3{
+  border:solid 0.2rem white;
+}
+.tutorial-display-area  ul{
+  background-color: transparent;
+
+}
+.tutorial-display-area  li{
+  background-color: transparent
+}
+.tutorial-display-area  h3:hover{
+  border:solid 0.2rem white;
+  background-color: transparent;
+  color:white;
+}
+.tutorial-display-area  ul:hover{
+  background-color: var(--nav1-bg-color);
+  color: white;
+}
+.tutorial-display-area  li:hover{
+  background-color: var(--hover-bg-color);
+  color: white;
+}
+.tutorial-display-area li.active {
+  background-color: var(--select-bg-color);
+  color: white;
+}
+
+.tutorial-display-area li.active:hover {
+  background-color: var(--select-bg-color);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+}
+.course-explanation-area {
+  flex-grow: 1;
+  width: 100%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  color: white;
+  overflow-x: hidden;
+}
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 2.5rem auto;
+  background-color: #1d2a35;
+}
+
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.5rem #04aa6d;
+  font-weight: bold;
+
+
+}
+
+#prevButton,#nextButton{
+  margin-left:20%;
+  border: solid 0.5rem #04aa6d;
+  transition: all 0.6s;
+  background-color: #f0f0f0;
+  color:#04aa6d;
+}
+#nextButton{
+  margin-right:20%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.5rem white;
+  color:white;
+  background-color: #04aa6d;
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.5rem #f0848d;
+  color:white;
+  background-color: #04aa6d;
+}
+
+   .education-animation-area {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+  .education-animation-area {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #f0f0f0; 
+    position: relative; 
+  }
+  .custom-shape-divider-bottom-1722681483 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+  }
+  .custom-shape-divider-bottom-1722681483 svg {
+    position: relative;
+    display: block;
+    width: calc(128% + 1.3px);
+    height: 40rem;
+  }
+  .custom-shape-divider-bottom-1722681483 .shape-fill {
+    fill: #38444d;
+  }
+  .inspirational-animations, .conclusion-animation {
+    position: relative;
+    z-index: 2; 
+  }
+  .inspirational-animations {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+  }
+  .animation-container {
+    position: absolute;
+    width: 80%;
+    display: flex;
+    align-items: center;
+  }
+  .animation-container.left, .animation-container.right {
+    left: 0;
+  }
+  .animation-container:nth-child(1) { top: 0; }
+  .animation-container:nth-child(2) { top: 22%; }
+  .animation-container:nth-child(3) { top: 46%; }
+  .animation-container:nth-child(4) { top: 66%; }
+  #animation1, #animation2, #animation3, #animation4 {
+    width: 50%;
+    height: 10rem;
+  }
+  
+  .animation-text {
+    font-size: 1.2rem;
+    width: 50%;
+    padding: 0 5%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+  .conclusion-animation {
+    width: 60%;
+    margin: -6rem auto 0;
+    text-align: center;
+  }
+  #conclusion-animation {
+    width: 100%;
+    height: 20rem;
+  }
+  .conclusion-animation .animation-text {
+    width: 100%;
+    margin-top: -5rem;
+    padding: 0;
+  }
+  
+  /* Small devices (landscape phones, less than 768px) */
+  @media (max-width: 767.98px) {
+    .inspirational-animations {
+      height: auto;
+    }
+    
+    .animation-container {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    
+    .animation-container:nth-child(1),
+    .animation-container:nth-child(2),
+    .animation-container:nth-child(3),
+    .animation-container:nth-child(4) {
+      top: auto;
+    }
+    
+    #animation1, #animation2, #animation3, #animation4 {
+      width: 100%;
+      height: 8rem;
+    }
+    .conclusion-animation {
+      width: 90%;
+      margin-top: 2rem;
+    }
+    
+    #conclusion-animation {
+      height: 15rem;
+    }
+  }
+
+/* Media Queries */
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .custom-dialog {
+    width: 85%;
+    height: 85%;
+    padding: 1rem;
+  }
+
+  .custom-dialog h2 {
+    font-size: 1.25rem;
+  }
+
+  .custom-dialog p {
+    font-size: 0.875rem;
+  }
+
+  .ok-button {
+    padding: 0.625rem 6rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 1.45rem;
+  }
+  /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 1.5rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.3rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:12%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:12%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.2rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 45rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 8rem;
+}
+
+#conclusion-animation {
+  height: 12rem;
+  margin-top: -3rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+}
+
+@media screen and (min-width: 375px) and (max-width: 424px){
+body{
+  font-size: 18px;
+}
+.quote-area{
+  font-size: 1.21rem;;
+}
+  .custom-dialog {
+    width: 85%;
+    height: 85%;
+    padding: 1rem;
+  }
+
+  .custom-dialog h2 {
+    font-size: 1.25rem;
+  }
+
+  .custom-dialog p {
+    font-size: 0.875rem;
+  }
+
+  .ok-button {
+    padding: 0.625rem 6rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 3rem;
+  }
+  /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 1.5rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.3rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:15%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:15%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.2rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 45rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 8rem;
+}
+
+#conclusion-animation {
+  height: 12rem;
+  margin-top: -2rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+}
+
+
+@media screen and (min-width: 425px) and (max-width: 767px){
+  .ok-button {
+    padding: 0.625rem 6rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 3.5rem;
+  }
+    /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 1.5rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.3rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:16%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:16%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.2rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 65rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 10rem;
+}
+
+#conclusion-animation {
+  height: 13rem;
+  margin-top: -2rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  body{
+    font-size: 24px;
+  }
+  .custom-dialog{
+    overflow-x: hidden;
+  }
+  .quote-area {
+    font-size: 1.5rem;
+  }
+  .ok-button {
+    padding: 0.625rem 6rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 11.5rem;
+  }
+  .text-area {
+    padding: 12rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-area-1 {
+    padding-top: 2rem;
+  }
+  
+  .text-area-2 {
+    padding-bottom: 2rem;
+  }
+  #animation-container{
+    width:16rem;
+    margin: 0.75rem 11.5rem;
+  }
+
+  /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 1.5rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.3rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:25%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:25%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.4rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 35rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 11rem;
+}
+
+#conclusion-animation {
+  height: 15rem;
+  margin-top: -2rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1439px){
+  body{
+    font-size:28px;
+  }
+  .custom-dialog{
+    overflow-x: hidden;
+  }
+  .quote-area {
+    font-size: 1.3rem;
+  }
+  .ok-button {
+    padding: 0.625rem 8rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 16.5rem;
+  }
+  .text-area {
+    padding: 14rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-area-1 {
+    padding-top: 2rem;
+  }
+  
+  .text-area-2 {
+    padding-bottom: 2rem;
+  }
+  #animation-container{
+    width:16rem;
+    margin: 0.75rem 16.5rem;
+  }
+   /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 1.5rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.3rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:25%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:25%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.4rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 35rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 11rem;
+}
+
+#conclusion-animation {
+  height: 15rem;
+  margin-top: -2rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+
+}
+
+
+@media screen and (min-width: 1440px) and (max-width: 2559px){
+  body{
+    font-size:26px;
+  }
+  .custom-dialog{
+    overflow-x: hidden;
+  }
+  .quote-area {
+    font-size: 1.5rem;
+  }
+  .ok-button {
+    padding: 0.625rem 12rem;
+    font-size: 0.875rem;
+    margin: 0.75rem 23.5rem;
+  }
+  .text-area {
+    padding: 14rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-area-1 {
+    padding-top: 2rem;
+  }
+  
+  .text-area-2 {
+    padding-bottom: 2rem;
+  }
+  #animation-container{
+    width:23rem;
+    margin: 0.75rem 24.5rem;
+  }
+   /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
+.three-lines-menu::-webkit-scrollbar {
+  width: 0.5rem;
+  
+}
+
+.three-lines-menu::-webkit-scrollbar-track {
+  background: var(--menu-bg-color);
+  border-radius: 0.275rem;
+  box-shadow: inset 0 0 0.125rem white;
+}
+
+.three-lines-menu::-webkit-scrollbar-thumb {
+  border-radius: 0.275rem;
+  box-shadow: 
+    inset 0 0 0.025rem ,#04aa6d
+    0 0 0.025rem white;
+  width: 0.9rem;
+  border: solid 0.01px white;
+}
+
+.course-title-area {
+font-size: 2rem;
+}
+
+.tutorial-display-area h2 {
+  color: var(--text-color);
+  margin-bottom: 3%;
+  font-size: 2rem;
+}
+
+.tutorial-display-area h3 {
+  color: var(--text-color);
+  background-color: #193d3d;
+  padding: 2.5%;
+  margin: 2.5% 0 1.5% 0;
+  cursor: text;
+  font-size: 1.8rem;
+}
+
+.tutorial-display-area ul {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.tutorial-display-area li {
+  color: var(--text-color);
+  padding: 2.5% 2.5%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button {
+  width: 15%; /* Adjust as needed */
+  padding: 0.75rem 3rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  border: solid 0.2rem #04aa6d;
+}
+
+#prevButton,#nextButton{
+  margin-left:25%;
+  border: solid 0.2rem #04aa6d;
+
+}
+#nextButton{
+  margin-right:25%;
+}
+#prevButton:hover , #nextButton:hover{
+  border: solid 0.2rem white;
+
+}
+#prevButton:active , #nextButton:active{
+  border: solid 0.2rem #f0848d;
+
+}
+.animation-text{
+  font-size: 1.6rem;
+}
+.custom-shape-divider-bottom-1722681483 svg {
+  height: 35rem;
+}
+#animation1, #animation2, #animation3, #animation4 {
+  height: 11rem;
+}
+
+#conclusion-animation {
+  height: 15rem;
+  margin-top: -2rem;
+}
+
+.conclusion-animation .animation-text {
+  margin-top: -2rem;
+}
+}
+
+
+/* course Explanation Area */
+
+
+  .exercises {
+    background-color: #38444d;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .exercises-knowledge-box {
+    background-color: #15202b;
+    color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .exercises-knowledge-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .real-time-exercise-box {
+    margin-top: 1rem;
+  }
+  
+  .heading-area-1 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .knowledge-explanation-area-1 {
+    margin-bottom: 1rem;
+  }
+  
+  .actual-content-area-1 {
+    background-color: #38444d;
+    color: white;
+    height: 50vh;
+    margin-bottom: 1rem;
+  }
+  
+  .button-area {
+    margin-bottom: 1rem;
+  }
+  
+  #runButton, #submitButton {
+    background-color: #04aa6d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  
+  .output-console {
+    background-color: #38444d;
+    color: white;
+    padding: 1rem;
+    height: 50vh;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+  }
+  
+  /* Custom scrollbar styles */
+  .monaco-editor .monaco-scrollable-element > .scrollbar,
+  .output-console::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+  .monaco-editor .monaco-scrollable-element > .scrollbar > .slider,
+  .output-console::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #04aa6d, #038052);
+    border-radius: 0.4rem;
+  }
+  
+  .monaco-editor .monaco-scrollable-element > .scrollbar > .slider:hover,
+  .output-console::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #05c07d, #049c63);
+  }
+  
+  .monaco-editor .monaco-scrollable-element > .scrollbar > .slider:active,
+  .output-console::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(to bottom, #06d68b, #05b272);
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  .monaco-editor .monaco-scrollable-element > .scrollbar > .slider,
+  .output-console::-webkit-scrollbar-thumb {
+    animation: pulse 2s infinite;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .submit--button {
+    background-color: #04aa6d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .start-exercise--link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    font-weight: bold;
+    margin-top: 1rem;
+  } 
+  
+  .start-exercise--link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Test Your Knowledge */
+  
+  .test-your-knowledge {
+    background-color: #38444d;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .knowledge-box {
+    background-color: #15202b;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .exercise-box {
+    background-color: #38444d;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .heading-area-2 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .knowledge-explanation-area-2 p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .actual-content-area-2 {
+    background-color: #38444d;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .actual-content-area-2 p {
+    font-size: 1rem;
+    white-space: normal;
+  }
+  
+  .user-input {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.25rem;
+    margin: 0 0.25rem;
+    width: 5rem;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .submit-button {
+    background-color: #04aa6d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .start-exercise-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .start-exercise-link:hover {
+    text-decoration: underline;
+  }
+  
+  #loading-animation-container-2 svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+
+ 

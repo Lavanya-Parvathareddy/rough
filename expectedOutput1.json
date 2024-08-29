@@ -1,0 +1,28 @@
+{
+    "exerciseName": "Exercise 1",
+    "description": "Create a simple HTML page with a heading and a paragraph.",
+    "instructions": "Write HTML code to create a page with an h1 heading that says 'Welcome' and a paragraph that says 'This is my first HTML page.'",
+    "expectedOutput": "<h1>Welcome</h1><p>This is my first HTML page.</p>",
+    "testCases": [
+      {
+        "description": "Page contains an h1 element",
+        "expectedOutput": "<h1>"
+      },
+      {
+        "description": "H1 contains 'Welcome'",
+        "expectedOutput": "<h1>Welcome</h1>"
+      },
+      {
+        "description": "Page contains a p element",
+        "expectedOutput": "<p>"
+      },
+      {
+        "description": "Paragraph contains correct text",
+        "expectedOutput": "<p>This is my first HTML page.</p>"
+      },
+      {
+        "description": "Elements are in correct order",
+        "expectedOutput": "<h1>Welcome</h1><p>This is my first HTML page.</p>"
+      }
+    ]
+  }

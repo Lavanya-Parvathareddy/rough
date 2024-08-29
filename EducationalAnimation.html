@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Animation Area</title>
+    <link rel="stylesheet" href="EducationalAnimation.css">
+</head>
+<body>
+    <div class="education-animation-area">
+        <div class="inspirational-animations">
+            <div class="animation-container left">
+                <div id="animation1"></div>
+                <p class="animation-text">Stay Focused and Avoid Distractions</p>
+            </div>
+            <div class="animation-container right">
+                <div id="animation2"></div>
+                <p class="animation-text">Active Learning</p>
+            </div>
+            <div class="animation-container left">
+                <div id="animation3"></div>
+                <p class="animation-text">Time Management</p>
+            </div>
+            <div class="animation-container right">
+                <div id="animation4"></div>
+                <p class="animation-text">Maintain a Positive Mindset</p>
+            </div>
+        </div>
+        <div class="conclusion-animation">
+            <div id="conclusion-animation"></div>
+            <p class="animation-text">Happy Study</p>
+        </div>
+        <!-- Add the shape divider here -->
+        <div class="custom-shape-divider-bottom-1722681483">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animations = [
+                { container: 'animation1', path: 'Target.json' },
+                { container: 'animation2', path: 'ActiveLearningAnimation.json' },
+                { container: 'animation3', path: 'Timmer.json' },
+                { container: 'animation4', path: 'Mindset2.json' },
+                { container: 'conclusion-animation', path: 'StudyConclusionAnimation.json' }
+            ];
+            animations.forEach(anim => {
+                lottie.loadAnimation({
+                    container: document.getElementById(anim.container),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: anim.path
+                });
+            });
+        });
+    </script>
+</body>
+</html>

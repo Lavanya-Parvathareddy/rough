@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="exercises-knowledge-box-Final.css">
+    <!-- <link rel="stylesheet" href="TestYourKnowledge.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <div class="exercises">
+        <div class="exercises-knowledge-box">
+          <div class="real-time-exercise-box">
+            <header>
+                <h1>CaseTest</h1>
+                <nav>
+                    <div id="test-name">Develop Your Career</div>
+                    <div id="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+                <div id="hamburger-menu">
+                    <div class="menu-content">
+                        <div class="menu-section">Naga Sowndarya</div>
+                        <ul class="test-exercises">
+                            <li data-test="html">HTML1 Test</li>
+                            <li data-test="html">HTML2 Test</li>
+                            <li data-test="html">HTML3 Test</li>
+                            <li data-test="html">HTML4 Test</li>
+                            <li data-test="html">HTML5 Test</li>
+                        </ul>
+                    </div>
+                </div>
+            </header> 
+ 
+            <section id="knowledge-area">
+                <div id="initial-message">
+                    <h2>Welcome to CaseTest</h2>
+                    <p>"Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'" - Mary Anne Radmacher</p>
+                    <p>Select a test exercise from the menu to begin your learning journey.</p>
+                </div>
+            </section>
+            <div class="actual-content-area" id="monaco-editor-container">
+              <!-- Monaco editor will be initialized here -->
+            </div>
+            <div class="button-area">
+                <button id="runButton">Run</button>
+            </div>
+            <div class="output-console" id="output-console"></div>
+            <div id="testCasesResults"></div>
+                <div class="button-area">
+                    <button id="checkTestCasesButton">Check Test Cases</button>
+                    <button id="resetButton">Reset</button>
+                    <a href="#" id="startExerciseLink" class="start-exercise--link">Start Exercise</a>
+                </div>
+          </div>
+        </div>
+    </div>
+    <!-- Updated warning message container -->
+<div id="warningMessage" class="warning-message">
+    <p>Are you sure you want to reset? This will clear all your input and output.</p>
+    <div id="lottieAnimation" class="lottie-container"></div>
+    <button id="confirmReset">OK</button>
+    <button id="cancelReset">Cancel</button>
+</div>
+
+
+    <script>
+        require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' } });
+        require(['vs/editor/editor.main'], function() {
+            // Monaco Editor is now loaded and ready to use
+            // Your initialization code will go here
+        });
+    </script>
+
+    <script src="exercises-knowledge-box-Final.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "requirements": [
+    {
+      "description": "H1 heading",
+      "testType": "regex",
+      "test": "<h1>.*<\\/h1>"
+    },
+    {
+      "description": "H2 heading",
+      "testType": "regex",
+      "test": "<h2>.*<\\/h2>"
+    }
+  ]
+}
